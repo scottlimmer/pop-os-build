@@ -1,7 +1,15 @@
 - name: Install core packages
+  become: yes
   apt:
     name: "{{ item }}"
   loop: "{{ base_packages }}"
+
+- name: Remove unwanted included packages
+  become: yes
+  apt:
+    name: "{{ item }}"
+    state: absent
+  loop: "{{ cleanup_packages }}"
 
 - include_role:
     name: "{{ item }}"

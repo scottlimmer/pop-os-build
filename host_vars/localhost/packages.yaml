@@ -7,6 +7,12 @@ base_packages:
   - jq
   - mlocate
   - notepadqq
+  - python3-psutil
   - sed
   - smartmontools
-user: scott
+  - vim
+
+cleanup_packages:
+  - geary
+
+
