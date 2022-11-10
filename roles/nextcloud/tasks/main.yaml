@@ -1,0 +1,7 @@
+- name: Add Nextcloud repository
+  apt_repository:
+    repo: ppa:nextcloud-devs/client
+
+- name: Install Nextcloud Desktop
+  apt:
+    name: nextcloud-desktop

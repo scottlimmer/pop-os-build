@@ -1,0 +1,4 @@
+- name: Build base
+  hosts: localhost
+  roles:
+    - role: games

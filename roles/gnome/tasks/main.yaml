@@ -1,0 +1,24 @@
+- name: Copy user-dirs.dirs
+  copy:
+    src: roles/gnome/files/user-dirs.dirs
+    dest: "/home/{{ user }}/.config/user-dirs.dirs"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0600
+
+# TODO: Why doesn't this take effect??
+# SEE: https://askubuntu.com/a/484752
+- name: GNOME Settings
+  become_user: "{{ user }}"
+  command: "gsettings set {{ setting.namespace }} {{ setting.variable }} {{ setting.value }}"
+  loop:
+    - { namespace: 'org.gnome.desktop.interface', variable: 'clock-format', value: '24h' }
+    - { namespace: 'org.gtk.Settings.FileChooser', variable: 'clock-format', value: '24h' }
+    - { namespace: 'org.gnome.desktop.wm.preferences', variable: 'button-layout', value: 'appmenu:minimize,maximize,close' }
+    - { namespace: 'org.gnome.shell.extensions.pop-cosmic', variable: 'clock-alignment', value: 'RIGHT' }
+    - { namespace: 'org.gnome.shell.extensions.pop-cosmic', variable: 'show-applications-button', value: 'false' }
+    - { namespace: 'org.gnome.desktop.interface', variable: 'show-battery-percentage', value: 'false' }
+  loop_control:
+    loop_var: setting
+  tags:
+    - gnome-settings

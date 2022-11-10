@@ -1,0 +1,12 @@
+base_packages:
+  - cifs-utils
+  - git-flow
+  - gnome-tweaks
+  - gparted
+  - htop
+  - jq
+  - mlocate
+  - notepadqq
+  - sed
+  - smartmontools
+user: scott

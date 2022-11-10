@@ -1,0 +1,9 @@
+- name: Build all
+  hosts: localhost
+  tasks:
+    - name: Update packages
+      apt:
+        upgrade: yes
+
+    - name: Update locate database
+      command: "updatedb"

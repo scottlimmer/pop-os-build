@@ -1,0 +1,14 @@
+- name: Install core packages
+  apt:
+    name: "{{ item }}"
+  loop: "{{ base_packages }}"
+
+- include_role:
+    name: "{{ item }}"
+  loop:
+    - gnome
+    - nextcloud
+    - keepassxc
+
+
+# zsh

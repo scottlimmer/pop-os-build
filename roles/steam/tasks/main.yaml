@@ -1,0 +1,3 @@
+- name: Install Steam
+  apt:
+    deb: https://repo.steampowered.com/steam/archive/precise/steam_latest.deb
