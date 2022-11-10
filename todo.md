@@ -1,0 +1,7 @@
+- digiKam
+- vlc
+- inkscape
+- gimp
+- gnome style/css
+- transmission-cli
+- zsh
