@@ -1,0 +1,8 @@
+- name: Get latest obsidian deb url
+  script: roles/obsidian/files/get_latest_obsidian_url.sh
+  register: obsidian
+
+- name: Install Obsidian
+  become: yes
+  apt:
+    deb: "{{ obsidian.stdout_lines[0] }}"

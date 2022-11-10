@@ -14,9 +14,10 @@
 - include_role:
     name: "{{ item }}"
   loop:
-    - gnome
     - nextcloud
     - keepassxc
+    - obsidian
+    - gnome
 
 
 # zsh
