@@ -1,5 +1,6 @@
 - name: Build all
   hosts: localhost
+  become: yes
   tasks:
     - name: Update packages
       apt:
