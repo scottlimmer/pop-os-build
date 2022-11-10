@@ -27,3 +27,5 @@ settings:
   '/org.gnome.shell.extensions.pop-shell/focus-left': "['<Super>KP_Left', '<Super>h']"
   '/org.gnome.shell.extensions.pop-shell/focus-right': "['<Super>KP_Right']"
   '/org.gnome.shell.extensions.pop-shell/focus-up': "['<Super>KP_Up', '<Super>k']"
+  '/org/gnome/desktop/calendar/show-weekdate': 'true'
+  '/org/gnome/desktop/interface/clock-show-weekday': 'true'
