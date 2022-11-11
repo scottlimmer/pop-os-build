@@ -1,2 +1,7 @@
-# gimp
-# inkscape
+- name: Configure GIMP
+  include_role:
+    name: gimp
+
+- name: Configure Inkscape
+  include_role:
+    name: inkscape

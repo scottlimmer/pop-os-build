@@ -3,3 +3,4 @@
   roles:
     - role: base
     - role: games
+    - role: design
