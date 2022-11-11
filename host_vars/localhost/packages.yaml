@@ -1,6 +1,7 @@
 base_packages:
   - cifs-utils
   - git-flow
+  - gnome-shell-extensions
   - gnome-tweaks
   - gparted
   - htop

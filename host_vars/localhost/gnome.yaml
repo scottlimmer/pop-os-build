@@ -29,3 +29,4 @@ settings:
   '/org.gnome.shell.extensions.pop-shell/focus-up': "['<Super>KP_Up', '<Super>k']"
   '/org/gnome/desktop/calendar/show-weekdate': 'true'
   '/org/gnome/desktop/interface/clock-show-weekday': 'true'
+  '/org/gnome/shell/enabled-extensions': "['ding@rastersoft.com', 'pop-cosmic@system76.com', 'pop-shell@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com', 'cosmic-dock@system76.com', 'cosmic-workspaces@system76.com', 'popx11gestures@system76.com', 'user-theme@gnome-shell-extensions.gcampax.github.com']"
