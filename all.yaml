@@ -4,3 +4,4 @@
     - role: base
     - role: games
     - role: design
+    - role: docker
