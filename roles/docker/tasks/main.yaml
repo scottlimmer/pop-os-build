@@ -1,4 +1,4 @@
-- name: One way to avoid apt_key once it is removed from your distro
+- name: Install docker
   become: yes
   block:
     - name: Add docker key
