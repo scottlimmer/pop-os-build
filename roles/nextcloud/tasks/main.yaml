@@ -1,7 +1,6 @@
 - name: Add Nextcloud repository
   become: yes
-  apt_repository:
-    repo: ppa:nextcloud-devs/client
+  command: "add-apt-repository --yes ppa:nextcloud-devs/client"
 
 - name: Install Nextcloud Desktop
   become: yes

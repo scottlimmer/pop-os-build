@@ -1,7 +1,6 @@
 - name: Add KeepassXC repository
   become: yes
-  apt_repository:
-    repo: ppa:phoerious/keepassxc
+  command: "add-apt-repository --yes ppa:phoerious/keepassxc"
 
 - name: Install KeepassXC
   become: yes
