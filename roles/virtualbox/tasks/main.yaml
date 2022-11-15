@@ -1,0 +1,18 @@
+- name: Install virtualbox
+  become: yes
+  block:
+    - name: Add virtualbox key
+      ansible.builtin.get_url:
+        url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+        dest: /etc/apt/keyrings/virtualbox.asc
+
+    - name: Apt virtualbox repo
+      ansible.builtin.apt_repository:
+        repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/virtualbox.asc] https://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
+        state: present
+
+    - name: Apt install virtualbox
+      apt:
+        pkg:
+          - virtualbox-7.0
+        update_cache: yes

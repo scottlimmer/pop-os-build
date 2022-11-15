@@ -5,3 +5,4 @@
     - role: games
     - role: design
     - role: docker
+    - role: virtualbox

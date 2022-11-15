@@ -1,0 +1,4 @@
+- name: Build all
+  hosts: localhost
+  roles:
+    - role: virtualbox
