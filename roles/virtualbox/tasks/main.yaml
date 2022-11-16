@@ -6,13 +6,31 @@
         url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
         dest: /etc/apt/keyrings/virtualbox.asc
 
-    - name: Apt virtualbox repo
+    - name: Add virtualbox repo
       ansible.builtin.apt_repository:
         repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/virtualbox.asc] https://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
         state: present
 
-    - name: Apt install virtualbox
+    - name: Install virtualbox
       apt:
         pkg:
           - virtualbox-7.0
+        update_cache: yes
+
+- name: Install vagrant
+  become: yes
+  block:
+    - name: Add vagrant key
+      get_url:
+        url: https://apt.releases.hashicorp.com/gpg
+        dest: /etc/apt/keyrings/vagrant.asc
+
+    - name: Add vagrant repo
+      apt_repository:
+        repo: "deb [signed-by=/etc/apt/keyrings/vagrant.asc] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main"
+        state: present
+
+    - name: Install vagrant
+      apt:
+        name: vagrant
         update_cache: yes
