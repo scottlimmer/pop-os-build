@@ -6,3 +6,4 @@
     - role: design
     - role: docker
     - role: virtualbox
+    - role: calibre
