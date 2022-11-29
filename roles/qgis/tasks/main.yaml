@@ -1,0 +1,19 @@
+- name: Install qgis
+  become: yes
+  block:
+    - name: Add qgis key
+      ansible.builtin.get_url:
+        url: https://download.qgis.org/downloads/qgis-archive-keyring.gpg
+        dest: /etc/apt/keyrings/qgis-archive-keyring.gpg
+
+    - name: Add qgis repo
+      ansible.builtin.apt_repository:
+        repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/qgis-archive-keyring.gpg] https://qgis.org/debian {{ ansible_distribution_release }} main"
+        state: present
+
+    - name: Install qgis
+      apt:
+        pkg:
+          - qgis
+          - qgis-plugin-grass
+        update_cache: yes

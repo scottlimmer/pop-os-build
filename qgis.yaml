@@ -1,0 +1,4 @@
+- name: Build qgis
+  hosts: localhost
+  roles:
+    - role: qgis
