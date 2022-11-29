@@ -12,6 +12,7 @@ base_packages:
   - sed
   - smartmontools
   - vim
+  - openjdk-19-jdk
 
 cleanup_packages:
   - geary
